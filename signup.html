@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - AppCopilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .form-container {
+      flex: 1;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo img {
+      width: 140px;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      margin-bottom: 1.2rem;
+      outline: none;
+    }
+
+    .create-account {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 25px;
+      border: none;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .login a {
+      color: #f67c3c;
+      text-decoration: none;
+    }
+
+    .welcome-container {
+      flex: 1;
+      background: linear-gradient(to right, #b8e2f5, #fcd7b6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .welcome-container h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .welcome-container h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-container p {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .welcome-container img {
+      max-width: 100%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="form-box">
+        <div class="logo">
+          <img src="img2.png" alt="AppCopilot Logo">
+        </div>
+        <form id="signupForm">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="********" required />
+
+          <button type="submit" class="create-account">Sign Up</button>
+
+          <div class="login">
+            Already have an account? <a href="login.html">Log In</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="welcome-container">
+      <h2>WELCOME TO APPCOPILOT</h2>
+      <h1>Create Your Account</h1>
+      <p>Start exploring properties tailored for you.</p>
+      <img src="img1.jpeg" alt="Property Image">
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent actual form submission
+
+      // Basic validation (already required fields)
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (name && email && password) {
+        // Redirect to dashboard page
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+</body>
+</html>

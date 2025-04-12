@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - AppCopilot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .dashboard-body {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 240px;
+      background: #f8f8f8;
+      padding: 20px;
+      height: 100vh;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      color: #ff6600;
+    }
+
+    .sidebar nav a {
+      display: block;
+      padding: 10px 0;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .sidebar nav a:hover {
+      color: #ff6600;
+    }
+
+    .sidebar nav a.active {
+      font-weight: bold;
+      color: #ff6600;
+    }
+
+    .user-footer {
+      margin-top: 30px;
+    }
+
+    .user-footer a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .user-footer a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      background-color: #f2f4f8;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    header .filters {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filters input,
+    .filters select,
+    .filters button {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .filters button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .filters button:hover {
+      background-color: #e65c00;
+    }
+
+    .properties {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .property-card {
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .property-info {
+      padding: 10px 0;
+    }
+
+    .property-info h3 {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .property-info .details span,
+    .property-info .details strong {
+      display: block;
+      margin: 2px 0;
+      color: #555;
+    }
+
+    .property-info button {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      border: none;
+      background-color: #ff6600;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .property-info button:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body class="dashboard-body">
+  <div class="sidebar">
+    <h2>APPCOPILOT</h2>
+    <nav>
+      <a href="#" class="active">Search Property</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Favourite</a>
+      <a href="#">Notifications</a>
+      <a href="#">Settings</a>
+      <a href="#">Support</a>
+      <a href="#">API Credentials</a>
+    </nav>
+    <div class="user-footer">
+      <p>👋 Welcome back</p>
+      <strong id="user-name">
+        <a href="gopika.html">User</a>
+      </strong>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h1>Compare Property</h1>
+      <div class="filters">
+        <input type="text" placeholder="Search Location"/>
+        <select><option>Amenities</option></select>
+        <select><option>Square Feet</option></select>
+        <select><option>Leasing End Date Range</option></select>
+        <select><option>Listing Type</option></select>
+        <button>Pull Data</button>
+        <button>Save Search</button>
+      </div>
+    </header>
+
+    <section class="properties">
+      <script>
+        const images = ["house1.jpeg", "house2.jpeg", "house3.jpeg", "house4.jpeg", "house5.jpeg"];
+        const amenities = "Amenities – View, Balcony, Garage, Dishwasher, Fitness Center";
+
+        function getRandomRent() {
+          return (1000 + Math.floor(Math.random() * 400)).toFixed(0);
+        }
+
+        function getRandomRentSqFt() {
+          return (1000 + Math.floor(Math.random() * 100)).toFixed(0);
+        }
+
+        function getRandomSuggested() {
+          return (1100 + Math.floor(Math.random() * 200)).toFixed(0);
+        }
+
+        function getRandomDate() {
+          const year = 2024;
+          const month = String(Math.floor(Math.random() * 12) + 1).padStart(2, '0');
+          const day = String(Math.floor(Math.random() * 28) + 1).padStart(2, '0');
+          return `${day}.${month}.${year}`;
+        }
+
+        for (let i = 0; i < 30; i++) {
+          const img = images[i % images.length];
+          const rentSqFt = getRandomRentSqFt();
+          const rent = getRandomRent();
+          const suggested = getRandomSuggested();
+          const expiry = getRandomDate();
+
+          document.write(`
+            <div class="property-card">
+              <img src="${img}" alt="Property" />
+              <div class="property-info">
+                <h3>Property Name</h3>
+                <p>${amenities}</p>
+                <div class="details">
+                  <span>$${rentSqFt} Rent/SqFt</span>
+                  <span>$${rent} Rent</span>
+                  <span>${expiry} Expiry</span>
+                  <strong>$${suggested}/mo Suggested</strong>
+                </div>
+                <button>View Rental Comparisons</button>
+              </div>
+            </div>
+          `);
+        }
+
+        // Display user name from localStorage if available
+        document.addEventListener("DOMContentLoaded", () => {
+          const userName = localStorage.getItem("username");
+          if (userName) {
+            document.getElementById("user-name").querySelector("a").textContent = userName;
+          }
+        });
+      </script>
+    </section>
+  </div>
+</body>
+</html>

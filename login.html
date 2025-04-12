@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - AppCopilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .form-container {
+      flex: 1;
+      background-color: #f8f8fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      border-radius: 0 30px 30px 0;
+    }
+
+    .form-box {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo img {
+      width: 130px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      margin-bottom: 1.2rem;
+      outline: none;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 25px;
+      border: none;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .signup {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .signup a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .image-container {
+      flex: 1;
+      background: linear-gradient(to right, #b8e2f5, #fcd7b6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      border-radius: 30px 0 0 30px;
+      text-align: center;
+    }
+
+    .image-container h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .image-container h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .image-container p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .image-container img {
+      max-width: 90%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="form-box">
+        <div class="logo">
+          <img src="img2.png" alt="AppCopilot Logo">
+        </div>
+        <h1>Login</h1>
+        <p>Access your AppCopilot account</p>
+
+        <form>
+          <label for="email">EMAIL ADDRESS</label>
+          <input type="email" id="email" name="email" placeholder="example@gmail.com" required/>
+
+          <label for="password">PASSWORD</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required/>
+
+          <button type="submit" class="login-button">Login</button>
+
+          <div class="signup">
+            Don’t have an account yet? <a href="signup.html">Create Account</a>
+          </div>
+          <div class="signup">
+            <a href="resetpassword.html">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="image-container">
+      <h2>WELCOME TO APPCOPILOT</h2>
+      <h1>Compare Your Property</h1>
+      <p>Discover homes that match your lifestyle.</p>
+      <img src="img1.jpeg" alt="Property Image">
+    </div>
+  </div>
+</body>
+</html>
